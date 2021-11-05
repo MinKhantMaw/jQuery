@@ -5,13 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jQuery</title>
+    <style>
+        .obj{
+            width:300px;
+            height:100px;
+            background: gray;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="one">This is test</h1>
+    <button class="hideBtn">Hide</button>
+    <button class="showBtn">Show</button>
+    <button class="toggleBtn">Toggle</button>
+    <div class="obj"></div>
+    
     <script src="jquery.js"></script>
     <script>
-        //  document.getElementById("one").innerHTML = "This is query"
-        $("#one").html('this is query change');
+        $(".hideBtn").click(function() {
+            $(".obj").hide(1500);
+        })
+        $(".showBtn").click(function() {
+            $(".obj").show(1500);
+        })
+        $(".toggleBtn").click(function() {
+            $(".obj").toggle(1500);
+        })
     </script>
 </body>
 </html>

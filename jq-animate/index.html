@@ -17,20 +17,31 @@
 </head>
 <body>
     <button class="animate">Animate</button>
+    <button class="stop">Stop</button>
     <div class="obj"></div>
-
+    <button class="chain">Chain</button>
+    <p class="obj2">I'm Min Khant</p>
     <script src="jquery.js"></script>
     <script>
         $(".animate").click(function(){
             $(".obj").animate({
                 // height : ["toggle","swing"],
                 // width : ["toggle","swing"],
-                left:"+=50px",
+                // left:"+=50px",
                 top:"+=100px",
-                bottom:"+=50px",
-                righ:"+=20px"
-            },2000);
+                // bottom:"+=50px",
+                 righ:"+=20px"
+            },2000,function(){
+                console.log("animation finished");
+            });
         });
+        $(".stop").click(function(){
+            $(".obj").stop();
+        })
+        $(".chain").click(function(){
+            $(".obj2").css("color","blue").hide(2000).show(1000)
+        })
+
     </script>
 </body>
 </html>
